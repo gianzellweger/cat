@@ -1,0 +1,15 @@
+/Users/gian/Desktop/cats/cs/bin/Debug/net6.0/cs
+/Users/gian/Desktop/cats/cs/bin/Debug/net6.0/cs.deps.json
+/Users/gian/Desktop/cats/cs/bin/Debug/net6.0/cs.runtimeconfig.json
+/Users/gian/Desktop/cats/cs/bin/Debug/net6.0/cs.dll
+/Users/gian/Desktop/cats/cs/bin/Debug/net6.0/ref/cs.dll
+/Users/gian/Desktop/cats/cs/bin/Debug/net6.0/cs.pdb
+/Users/gian/Desktop/cats/cs/obj/Debug/net6.0/cs.csproj.AssemblyReference.cache
+/Users/gian/Desktop/cats/cs/obj/Debug/net6.0/cs.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gian/Desktop/cats/cs/obj/Debug/net6.0/cs.AssemblyInfoInputs.cache
+/Users/gian/Desktop/cats/cs/obj/Debug/net6.0/cs.AssemblyInfo.cs
+/Users/gian/Desktop/cats/cs/obj/Debug/net6.0/cs.csproj.CoreCompileInputs.cache
+/Users/gian/Desktop/cats/cs/obj/Debug/net6.0/cs.dll
+/Users/gian/Desktop/cats/cs/obj/Debug/net6.0/ref/cs.dll
+/Users/gian/Desktop/cats/cs/obj/Debug/net6.0/cs.pdb
+/Users/gian/Desktop/cats/cs/obj/Debug/net6.0/cs.genruntimeconfig.cache
