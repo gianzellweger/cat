@@ -1,9 +1,9 @@
-#!/usr/local/bin/python3
+#!/usr/bin/env python3
 
 import sys
 
 if len(sys.argv) > 1:
-    with open(sys.argv[1], "r") as file :
+    with open(sys.argv[1], "r") as file:
         if not file:
             print("File not found")
             exit(1)

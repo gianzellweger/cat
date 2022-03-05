@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat</title>
+</head>
+<body>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100vw;
+            padding: 0px 5vw;
+        }
+        input {
+            margin-top: 5vw;
+        }
+        code {
+            margin: 5vw;
+        }
+    </style>
+    <input type="file">
+    <script type="text/javascript">
+        const input = document.getElementsByTagName("input")[0];
+        input.onchange = function() {
+            const files = input.files;
+            if (files.length == 0) {
+                let pastCode = document.getElementsByTagName("code")[0];
+                if (pastCode) {
+                    pastCode.parentNode.removeChild(pastCode);
+                }
+                let code = document.createElement("code");
+                code.innerText = "File not found";
+                document.body.appendChild(code)
+                return false;
+            }
+            const scanner = new FileReader();
+            const file = files[0];
+            scanner.onload = function(e) {
+                let pastCode = document.getElementsByTagName("code")[0];
+                if (pastCode) {
+                    pastCode.parentNode.removeChild(pastCode);
+                }
+                let code = document.createElement("code");
+                code.innerText = e.target.result.split(/\r\n|\n/).join("\n");
+                code.innerHTML = code.innerHTML.replaceAll(/\t|    /g, "&nbsp;&nbsp;&nbsp;&nbsp;")
+                document.body.appendChild(code);
+                return true;
+            }
+            scanner.onerror = function() {
+                let pastCode = document.getElementsByTagName("code")[0];
+                if (pastCode) {
+                    pastCode.parentNode.removeChild(pastCode);
+                }
+                let code = document.createElement("code");
+                code.innerText = "File not found";
+                document.body.appendChild(code)
+                return false;
+            }
+            scanner.readAsText(file);
+        }
+    </script>
+</body>
+</html>

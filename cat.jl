@@ -1,5 +1,9 @@
+#!/usr/bin/env julia
+
 if length(ARGS) > 0
-    text = read(first(ARGS), String)
+    file = open(first(ARGS))
+    text = read(file, String)
+    close(file)
     println(text)
 else
     println("File not found")

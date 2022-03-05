@@ -1,0 +1,73 @@
+	.section	__TEXT,__text,regular,pure_instructions
+	.build_version macos, 12, 0	sdk_version 12, 1
+	.globl	_main                           ## -- Begin function main
+	.p2align	4, 0x90
+_main:                                  ## @main
+	.cfi_startproc
+## %bb.0:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	subq	$32, %rsp
+	movl	$0, -4(%rbp)
+	movl	%edi, -8(%rbp)
+	movq	%rsi, -16(%rbp)
+	movq	-16(%rbp), %rax
+	movq	8(%rax), %rdi
+	leaq	L_.str(%rip), %rsi
+	callq	_fopen
+	movq	%rax, -24(%rbp)
+	cmpq	$0, -24(%rbp)
+	jne	LBB0_2
+## %bb.1:
+	leaq	L_.str.1(%rip), %rdi
+	movb	$0, %al
+	callq	_printf
+	movl	$1, -4(%rbp)
+	jmp	LBB0_6
+LBB0_2:
+	jmp	LBB0_3
+LBB0_3:                                 ## =>This Inner Loop Header: Depth=1
+	movq	-24(%rbp), %rdi
+	callq	_getc
+                                        ## kill: def $al killed $al killed $eax
+	movb	%al, -25(%rbp)
+	movsbl	%al, %eax
+	cmpl	$-1, %eax
+	je	LBB0_5
+## %bb.4:                               ##   in Loop: Header=BB0_3 Depth=1
+	movsbl	-25(%rbp), %esi
+	leaq	L_.str.2(%rip), %rdi
+	movb	$0, %al
+	callq	_printf
+	jmp	LBB0_3
+LBB0_5:
+	movq	-24(%rbp), %rdi
+	callq	_fclose
+	leaq	L_.str.3(%rip), %rdi
+	movb	$0, %al
+	callq	_printf
+	movl	$0, -4(%rbp)
+LBB0_6:
+	movl	-4(%rbp), %eax
+	addq	$32, %rsp
+	popq	%rbp
+	retq
+	.cfi_endproc
+                                        ## -- End function
+	.section	__TEXT,__cstring,cstring_literals
+L_.str:                                 ## @.str
+	.asciz	"rb"
+
+L_.str.1:                               ## @.str.1
+	.asciz	"File not found\n"
+
+L_.str.2:                               ## @.str.2
+	.asciz	"%c"
+
+L_.str.3:                               ## @.str.3
+	.asciz	"\n"
+
+.subsections_via_symbols

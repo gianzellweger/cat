@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "O5lW9c0lSzoQlJp4Vr4IMDKZP6OrVu9OBMnnaNt4EZP97HiAgJWidJK3pxeu/n+xNucmIGSI0FODT0q7MG8+Wg==",
+  "success": true,
+  "projectFilePath": "/Users/gian/Desktop/cats/fs/fs.fsproj",
+  "expectedPackageFiles": [
+    "/Users/gian/.nuget/packages/fsharp.core/6.0.1/fsharp.core.6.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
